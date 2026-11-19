@@ -1,5 +1,5 @@
-person = ('Rainer', 75.7, 183)
-bmi = person[1]/(person[2]*person[2])*10000
+person = {'id': 42, 'name': 'Rainer', 'weight': 75.7, 'height': 183}
+bmi = person['weight']/(person['height']*person['height'])*10000
 
 bmi_category = "obese"
 if bmi < 18:
@@ -8,4 +8,4 @@ elif bmi < 25:
     bmi_category = 'normalweight' 
 elif bmi < 30:
     bmi_category = 'overweight' 
-print(f'{person[0]} has a body mass index of {bmi:.2f} and therefor is {bmi_category}')
+print(f'{person['name']} has a body mass index of {bmi:.2f} and therefor is {bmi_category}')
