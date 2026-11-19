@@ -1,0 +1,6 @@
+Eat,5,1
+Drink,9,0
+Sleep,2,0
+Walk,4,1
+Talk,9,1
+
