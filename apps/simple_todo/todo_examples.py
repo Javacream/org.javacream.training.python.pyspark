@@ -1,12 +1,16 @@
-todos = [
-    {'description': 'Eat', "priority": 5, 'status': False},
-    {'description': 'Sleep', "priority": 2, 'status': True},
-    {'description': 'Drink', "priority": 9, 'status': False},
-    {'description': 'Walk', "priority": 9, 'status': False},
-    {'description': 'Talk', "priority": 3, 'status': True}
-]
+with open('data/todos.txt', 'rt', encoding='utf-8') as todos_file:
+    raw_line = todos_file.read()
 
-# Python Comprehensions, eine Art integrierte Selektionssprache
+lines = raw_line.split('\n')
+todos = list()
+for line in lines:
+    if line.strip() != "":
+        description, priority, status = line.split(',')
+        priority = int(priority)
+        status = bool(int(status))
+        todo = {'description': description, 'priority': priority, 'status': status}
+        todos.append(todo)
+
 open_todos = [todo for todo in todos if todo["status"] == False]
 
 closed_todos = [todo for todo in todos if todo["status"]]
