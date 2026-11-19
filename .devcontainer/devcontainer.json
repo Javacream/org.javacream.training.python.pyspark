@@ -1,0 +1,29 @@
+{
+  "name": "Python and PySpark Training",
+  "build": {
+    "dockerfile": "Dockerfile",
+    "context": "."
+  },
+  "workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-python.python",
+        "ms-python.vscode-pylance",
+        "ms-python.debugpy",
+        "ms-toolsai.jupyter"
+      ],
+      "settings": {
+        "python.defaultInterpreterPath": "/usr/local/bin/python",
+        "python.analysis.typeCheckingMode": "basic"
+      }
+    }
+  },
+  "remoteUser": "vscode",
+  "postCreateCommand": "python -c 'import pyspark; print(\"PySpark\", pyspark.__version__)' && java -version",
+  "containerEnv": {
+    "PYSPARK_PYTHON": "/usr/local/bin/python",
+    "PYSPARK_DRIVER_PYTHON": "/usr/local/bin/python",
+    "SPARK_LOCAL_IP": "127.0.0.1"
+  }
+}
