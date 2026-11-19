@@ -6,34 +6,17 @@ todos = [
     {'description': 'Talk', "priority": 3, 'status': True}
 ]
 
-open_todos = []
-for todo in todos:
-    if todo["status"] == False:
-        open_todos.append(todo)
+# Python Comprehensions, eine Art integrierte Selektionssprache
+open_todos = [todo for todo in todos if todo["status"] == False]
 
-closed_todos = []
-for todo in todos:
-    if todo["status"] == True:
-        closed_todos.append(todo)
+closed_todos = [todo for todo in todos if todo["status"]]
 
-high_priority_todos = []
-for todo in todos:
-    if todo["priority"] > 5:
-        high_priority_todos.append(todo)
+high_priority_todos = [todo for todo in todos if todo["priority"] > 5]
 
-low_priority_todos = []
-for todo in todos:
-    if todo["priority"] <= 5:
-        low_priority_todos.append(todo)
+low_priority_todos = [todo for todo in todos if todo["priority"] <= 5]
 
-open_todos_descriptions = []
-for todo in todos:
-    if todo["status"] == True:
-        open_todos_descriptions.append(todo['description'])
+open_todos_descriptions = [todo['description'] for todo in todos if todo["status"] == True]
 
-todos_with_description_starting_with_D = []
-for todo in todos:
-    if todo["description"].startswith('D'):
-        todos_with_description_starting_with_D.append(todo)
+todos_with_description_starting_with_D = [todo for todo in todos if todo["description"].startswith('D')]
 
 print('Done')
