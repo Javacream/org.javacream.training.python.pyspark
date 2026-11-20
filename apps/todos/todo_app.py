@@ -1,4 +1,3 @@
-name = 'Sawitzki'
 def read_todos():
     pass
 def calculate_open_todos():
