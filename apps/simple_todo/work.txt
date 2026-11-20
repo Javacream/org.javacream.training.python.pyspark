@@ -1,8 +1,0 @@
-Datenverarbeitung
-Welche ToDos sind offen?
-Welche sind abgeschlossen?
-Welche haben Priorität > 5
-Welche haben Priorität <= 5
-Ergebnisliste aller offenen Todos nur mit Description
-Alle ToDos, die mit dem Buchstaben "D" beginnen
-…
